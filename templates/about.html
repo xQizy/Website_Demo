@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Photo Zone</title>
+    <style>
+        #slideshow {
+            width: 500px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid black;
+        }
+        #slideshow img {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+</style>
+<script>
+    // JavaScript for slide show
+    var images = ['image1.png', 'image2.png', 'image3.png'];
+    var currentImage = 0;
+
+    function changeImage() {
+        document.getElementById('slideshow').src = images[currentImage];
+        currentImage = (currentImage + 1) % images.length;
+    }
+
+    setInterval(changeImage, 3000);
+</script>
+</head>
+<body>
+    <h1>Photo Zone</h1>
+    <div id="slideshow">
+        <img src="image1.png" alt="Slide show image">
+    </div>
+    <br>
+    <button>Previous</button>
+    <button>Pause</button>
+    <button>Next</button>
+    <br><br>
+    <p>Follow us on:</p>
+    <a href="https://www.facebook.com/" target="_blank"><img src="resources/facebook.jpeg" alt="Facebook logo"></a>
+    <a href="https://www.instagram.com/" target="_blank"><img src="resources/instagram.jpeg" alt="Instagram logo">
+</body>
+</html>
